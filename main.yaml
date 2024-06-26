@@ -1,8 +1,8 @@
-- name: "install {{ component }}"
-  hosts: "{{ component }}"
+- name: "install {{component}}"
+  hosts: "{{component}}"
   become: yes
   roles:
-  - "{{ component }}"
+  - "{{component}}"
 
 
 

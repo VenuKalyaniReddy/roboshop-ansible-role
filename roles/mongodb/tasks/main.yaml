@@ -2,7 +2,7 @@
   ansible.builtin.copy:
     src: mongo.repo.j2
     dest: /etc/yum.repos.d/mongo.repo
-    remot_src: yes
+    remote_src: yes
   
 - name: Install mongodb
   ansible.builtin.package:

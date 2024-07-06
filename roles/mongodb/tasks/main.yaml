@@ -2,13 +2,6 @@
   ansible.builtin.copy:
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
-    remote_src: yes
-
-- name: Copy mongodb repo
-  ansible.builtin.copy:
-    src: mongodb.repo
-    dest: /etc/yum.repos.d/mongodb.repo
-  
   
 - name: Install mongodb
   ansible.builtin.package:

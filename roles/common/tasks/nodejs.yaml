@@ -3,10 +3,10 @@
 
 - name: Install nodejs
   ansible.builtin.dnf:
-      name: nodejs 
-      state: present
+    name: nodejs 
+    state: present
 
 - name: Install dependencies
-  ansible.builtin.commond: npm install
+  ansible.builtin.command: npm install
   args:
     chdir: /app

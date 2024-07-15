@@ -1,0 +1,26 @@
+- name: install nginx
+  ansible.builtin.dnf: 
+    name: nginx
+    state: present
+
+- name: removing html default nginx
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: creating html 
+  ansible.buitin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+- name: download the frontend url
+  ansible.builtin.get_url:
+    url: https://roboshop-builds.s3.amazonaws.com/web.zip
+    dest: /tmp
+
+- name: extract the application
+  ansible.builtin.unarchive:
+    src: /tmp/web.zip
+    dest: /usr/share/nginx/html  
+
+- name: 
